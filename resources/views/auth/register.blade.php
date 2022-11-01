@@ -18,6 +18,15 @@
                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
             </div>
 
+            <!-- MObile -->
+            <div class="mt-4">
+                <x-input-label for="mobile" :value="__('Mobile')" />
+
+                <x-text-input id="mobile" class="block mt-1 w-full" type="text" name="mobile" :value="old('mobile')" required />
+
+                <x-input-error :messages="$errors->get('mobile')" class="mt-2" />
+            </div>
+
             <!-- Email Address -->
             <div class="mt-4">
                 <x-input-label for="email" :value="__('Email')" />
@@ -51,11 +60,11 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                <a class="mr-2 underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
                 </a>
 
-                <x-primary-button class="ml-4">
+                <x-primary-button class="mr-2">
                     {{ __('Register') }}
                 </x-primary-button>
             </div>

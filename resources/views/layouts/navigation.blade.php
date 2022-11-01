@@ -11,9 +11,12 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-4 space-x-reverse sm:-my-px sm:mr-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('داشبورد') }}
+                        {{ __('dashboard') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('Restaurants')" :active="request()->routeIs('Restaurants')">
+                        {{ __('Restaurants') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -41,7 +44,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('خروج') }}
+                                {{ __('logout') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>

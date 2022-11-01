@@ -1,5 +1,9 @@
 <?php
 
 Route::get('/' , function (){
-    return "admin Panels";
-});
+    return view('dashboard');
+})->name('dashboard');
+
+Route::get('restaurants' , function (){
+    return view('panel/restaurants');
+})->name('Restaurants');

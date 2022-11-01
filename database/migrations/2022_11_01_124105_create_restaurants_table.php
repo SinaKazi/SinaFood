@@ -13,16 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('mobile')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->boolean('is_superuser')->default(0);
-            $table->boolean('is_restuser')->default(0);
-            $table->rememberToken();
+            $table->string('phone_number')->unique();
+            $table->string('address');
+            $table->string('account_number')->unique();
+            //$table->foreignId('tyep_id')->references('restauantsType')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -34,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('restaurants');
     }
 };

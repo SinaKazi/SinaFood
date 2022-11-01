@@ -1,0 +1,17 @@
+{
+    "Log in": "ورود",
+    "Email": "ایمیل",
+    "Password": "رمز عبور",
+    "Remember me": "ذخیره ورود",
+    "Forgot your password?": "فراموشی رمز عبور",
+    "Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.": "رمز عبور خود را فراموش کرده اید؟ مشکلی نیست. فقط آدرس ایمیل خود را به ما اطلاع دهید و ما یک پیوند بازنشانی رمز عبور را برای شما ایمیل می کنیم که به شما امکان می دهد رمز جدیدی را انتخاب کنید.",
+    "Email Password Reset Link": "بازنشانی رمز عبور ایمیل",
+    "Name": "نام",
+    "Confirm Password": "تکرار رمز عبور",
+    "Already registered?": "قبلا قبت نام کرده اید ؟",
+    "Register": "ثبت نام",
+    "logout": "خروج",
+    "dashboard": "داشبورد",
+    "Restaurants": "رستوران ها",
+    "Mobile": "شماره همراه"
+}

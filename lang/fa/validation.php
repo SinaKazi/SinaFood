@@ -125,7 +125,6 @@ return [
     'uploaded'         => 'فیلد :attribute به درستی اپلود نشد.',
     "url"              => "فرمت آدرس :attribute اشتباه است.",
     'uuid'             => ':attribute باید یک فرمت درست UUID باشد.',
-
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
@@ -182,6 +181,7 @@ return [
         "available" => "موجود",
         "size" => "اندازه",
 		"file" => "فایل",
-		"fullname" => "نام کامل"
+		"fullname" => "نام کامل",
+        "log in" => "ورود"
     ],
 ];
