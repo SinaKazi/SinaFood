@@ -18,8 +18,12 @@ return new class extends Migration
             $table->string('name');
             $table->string('phone_number')->unique();
             $table->string('address');
+            $table->string('lat');
+            $table->string('lng');
             $table->string('account_number')->unique();
-            //$table->foreignId('tyep_id')->references('restauantsType')->onDelete('cascade');
+            $table->string('type_rest');
+            $table->boolean('status')->default(0);
+            //$table->foreignId('type_id')->references('restauantsType')->onDelete('cascade');
             $table->timestamps();
         });
     }

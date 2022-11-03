@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Restaurants;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class RestaurantsController extends Controller
@@ -10,11 +11,12 @@ class RestaurantsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        //
+        $restaurants = Restaurants::query()->paginate(20);
+        return View('panel.restaurants' , compact('restaurants'));
     }
 
     /**
@@ -35,16 +37,24 @@ class RestaurantsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $restVaid = $request->validate([
+
+
+        ]);
+
+        Restaurants::created($restVaid);
+
+        return redirect(route('dashboard.restaurants'))->with('success','رستوران با موفقیت اضافه شد');
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Restaurants  $restaurants
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Restaurants $restaurants)
+    public function show($id)
     {
         //
     }
@@ -52,10 +62,10 @@ class RestaurantsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Restaurants  $restaurants
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Restaurants $restaurants)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +74,10 @@ class RestaurantsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Restaurants  $restaurants
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Restaurants $restaurants)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +85,10 @@ class RestaurantsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Restaurants  $restaurants
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Restaurants $restaurants)
+    public function destroy($id)
     {
         //
     }

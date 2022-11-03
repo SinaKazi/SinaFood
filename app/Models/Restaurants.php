@@ -7,6 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Restaurants extends Model
 {
-
+    protected $fillable = [
+        'name',
+        "phone_number",
+        'address',
+        'account_number',
+        'statue',
+        'type_rest',
+        'lat',
+        'lng'
+    ];
     use HasFactory;
 }

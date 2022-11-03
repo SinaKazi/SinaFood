@@ -13,5 +13,19 @@
     "logout": "خروج",
     "dashboard": "داشبورد",
     "Restaurants": "رستوران ها",
-    "Mobile": "شماره همراه"
+    "Mobile": "شماره همراه",
+    "Type Restaurant": "نوع رستوران",
+    "Status": "وضعیت",
+    "Operations": "عملیات",
+    "Edite": "ویرایش",
+    "Disable": "غیرفعال",
+    "Delete": "حذف",
+    "Information": "اطلاعات",
+    "Active":"فعال",
+    "FastFood": "فست فود",
+    "Phone Number": "تلفن تماس",
+    "Account Number": "شماره حساب",
+    "Add": "اضافه",
+    "Search": "جست و جو"
+
 }
