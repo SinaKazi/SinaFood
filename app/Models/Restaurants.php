@@ -21,7 +21,8 @@ class Restaurants extends Model
     ];
     use HasFactory;
 
-    public function foods(){
+    public function food(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
         return $this->hasMany(Food::class);
     }
 }

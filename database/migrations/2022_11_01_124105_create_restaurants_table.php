@@ -22,7 +22,7 @@ return new class extends Migration
             $table->tinyText('address');
             $table->string('lat');
             $table->string('lng');
-            $table->string('account_number')->unique();
+            $table->string('account_number');
             $table->string('type_rest');
             $table->string('url_img');
             $table->string('time');

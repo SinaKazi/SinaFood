@@ -2,21 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Restaurants;
-use App\Models\User;
+use App\Models\Food;
 use Illuminate\Http\Request;
 
-class RestaurantsController extends Controller
+class FoodController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $restaurants = Restaurants::query()->paginate(20);
-        return View('panel.restaurants' , compact('restaurants'));
+        //
     }
 
     /**
@@ -26,16 +24,12 @@ class RestaurantsController extends Controller
      */
     public function create()
     {
-        Restaurants::create([
+        Food::create([
             'name'=> request('name'),
-            'phone_number'=> request('phone_number'),
-            'address'=> request('address'),
-            'lat'=> request('lat'),
-            'lng'=> request('lng'),
-            'account_number'=> request('account_number'),
-            'type_rest'=> request('type_rest'),
-            'url_img'=> request('url_img'),
-            'time'=> request('time')
+            'price'=> request('price'),
+            'data'=> request('data'),
+            'imag_url'=> request('imag_url'),
+            'inventory'=> request('inventory'),
         ]);
     }
 
@@ -47,22 +41,7 @@ class RestaurantsController extends Controller
      */
     public function store(Request $request)
     {
-        $restVaid = $request->validate([
-            'name'=> 'required|max:255|',
-            'phone_number'=> 'required|max:11|',
-            'address'=>'required|max:255|',
-            'lat'=>'required',
-            'lng'=>'required',
-            'account_number'=>'required|digits:12',
-            'type_rest'=>'required',
-            'url_img'=>'url',
-            'time'=>'required'
-        ]);
-
-        Restaurants::created($restVaid);
-
-        return redirect(route('dashboard.restaurants'))->with('success','رستوران با موفقیت اضافه شد');
-
+        //
     }
 
     /**
