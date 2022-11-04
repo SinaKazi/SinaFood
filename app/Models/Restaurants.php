@@ -15,7 +15,13 @@ class Restaurants extends Model
         'statue',
         'type_rest',
         'lat',
-        'lng'
+        'lng',
+        'url_img',
+        'time'
     ];
     use HasFactory;
+
+    public function foods(){
+        return $this->hasMany(Food::class);
+    }
 }

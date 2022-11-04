@@ -8,7 +8,7 @@
     "Email Password Reset Link": "بازنشانی رمز عبور ایمیل",
     "Name": "نام",
     "Confirm Password": "تکرار رمز عبور",
-    "Already registered?": "قبلا قبت نام کرده اید ؟",
+    "Already registered?": "قبلا ثبت نام کرده اید ؟",
     "Register": "ثبت نام",
     "logout": "خروج",
     "dashboard": "داشبورد",
@@ -26,6 +26,6 @@
     "Phone Number": "تلفن تماس",
     "Account Number": "شماره حساب",
     "Add": "اضافه",
-    "Search": "جست و جو"
+    "Search": "جستجو"
 
 }

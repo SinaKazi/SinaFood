@@ -52,4 +52,8 @@ class User extends Authenticatable
     public function isRestUser(){
         return $this->is_restuser;
     }
+    public function restauran()
+    {
+        return $this->hasOne(Restaurants::class);
+    }
 }

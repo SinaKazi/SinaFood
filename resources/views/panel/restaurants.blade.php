@@ -116,7 +116,7 @@
                                 </div>
                                 <!-- Modal body -->
                                 <div class="p-6 space-y-6">
-                                    <form method="POST" action="{{ route('register') }}">
+                                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                                         @csrf
 
                                         <!-- Name -->
@@ -158,10 +158,17 @@
 
                                             <textarea class="w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="address" name="address"></textarea>
 
-
                                             <x-input-error :messages="$errors->get('phone_number')" class="mt-2"/>
                                         </div>
-                                        <x-primary-button class="mr-2">
+                                        <div class="mt-4">
+                                            <x-input-label for="image" :value="__('image profile')"/>
+
+                                            <x-text-input id="image" class="block mt-1 w-full" type="file"
+                                                          name="image" required/>
+
+                                            <x-input-error :messages="$errors->get('image')" class="mt-2"/>
+                                        </div>
+                                        <x-primary-button class="mr-2 mt-4">
                                             {{ __('Add') }}
                                         </x-primary-button>
                                     </form>

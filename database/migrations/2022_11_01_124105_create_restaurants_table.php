@@ -15,13 +15,17 @@ return new class extends Migration
     {
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('name');
             $table->string('phone_number')->unique();
-            $table->string('address');
+            $table->tinyText('address');
             $table->string('lat');
             $table->string('lng');
             $table->string('account_number')->unique();
             $table->string('type_rest');
+            $table->string('url_img');
+            $table->string('time');
             $table->boolean('status')->default(0);
             //$table->foreignId('type_id')->references('restauantsType')->onDelete('cascade');
             $table->timestamps();

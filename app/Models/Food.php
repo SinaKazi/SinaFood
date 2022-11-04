@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Food extends Model
 {
+    protected $fillable = [
+        'name',
+        'price',
+        'data',
+        'imag_url',
+        'inventory'
+    ];
     use HasFactory;
 }
