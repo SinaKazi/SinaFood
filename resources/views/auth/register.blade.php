@@ -58,7 +58,15 @@
 
                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
             </div>
+            <div class="mt-4">
+                <x-input-label class="rtl:mr-2 ltr:ml-2 inline-block" for="is_restaurantuser" :value="__('I am a restaurant owner')" />
 
+                <x-text-input id="is_restaurantuser" class="rtl:float-right ltr:float-left"
+                              type="checkbox"
+                              name="is_restaurantuser" />
+
+                <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+            </div>
             <div class="flex items-center justify-end mt-4">
                 <a class="mr-2 underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}

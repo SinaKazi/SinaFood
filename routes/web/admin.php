@@ -12,3 +12,4 @@ Route::get('/' , function (){
 //})->name('Restaurants');
 
 Route::resource('restaurants' , RestaurantsController::class );
+Route::resource('foods' , RestaurantsController::class );

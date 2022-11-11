@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Food;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,9 +15,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        \App\Models\Address::factory(10)->create();
         \App\Models\User::factory(10)->create();
-       \App\Models\Restaurants::factory(50)->create();
-        \App\Models\Food::factory(100)->create();
+       \App\Models\Restaurants::factory(10)->create();
+        \App\Models\Food::factory(20)->create();
+        \App\Models\Category::factory(10)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

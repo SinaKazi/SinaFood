@@ -23,7 +23,8 @@ class User extends Authenticatable
         'email',
         'password',
         'is_superuser',
-        'is_restuser'
+        'is_restaurantuser',
+        'api_token'
     ];
 
     /**
@@ -49,11 +50,16 @@ class User extends Authenticatable
         return $this->is_superuser;
     }
 
-    public function isRestUser(){
-        return $this->is_restuser;
+    public function isRestaurantuser(){
+        return $this->is_restaurantuser;
     }
-    public function restauran()
+    public function restaurant()
     {
         return $this->hasOne(Restaurants::class);
+    }
+
+    public function address(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Address::class);
     }
 }

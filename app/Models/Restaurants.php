@@ -10,19 +10,22 @@ class Restaurants extends Model
     protected $fillable = [
         'name',
         "phone_number",
-        'address',
         'account_number',
         'statue',
-        'type_rest',
-        'lat',
-        'lng',
+        'type_restaurant',
         'url_img',
-        'time'
+        'work_time',
+        'is_open'
     ];
     use HasFactory;
 
-    public function food(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function foods(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Food::class);
+    }
+
+    public function address(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Address::class , 'id');
     }
 }

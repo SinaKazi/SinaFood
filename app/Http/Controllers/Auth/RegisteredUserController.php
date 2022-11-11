@@ -40,10 +40,17 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+            if ($request->is_restaurantuser){
+                $is_restaurantuser = true;
+            }else{
+                $is_restaurantuser = false;
+            }
+//dd($request->is_restaurantuser);
         $user = User::create([
             'name' => $request->name,
             'mobile'=>$request->mobile,
             'email' => $request->email,
+            'is_restaurantuser'=>$is_restaurantuser,
             'password' => Hash::make($request->password),
         ]);
 

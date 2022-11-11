@@ -4,15 +4,21 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Food extends Model
 {
     protected $fillable = [
-        'name',
+        'title',
         'price',
-        'data',
-        'imag_url',
+        'raw_material',
+        'image',
         'inventory'
     ];
+
+    public function category(): HasOne
+    {
+        return $this->hasOne(Category::class , 'id');
+    }
     use HasFactory;
 }

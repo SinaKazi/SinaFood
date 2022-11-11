@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Address;
+use App\Models\Address_Restaurant;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -21,14 +23,12 @@ class RestaurantsFactory extends Factory
             'user_id'=> User::factory(),
             'name' => fake()->name(),
             'phone_number' => fake()->unique()->phoneNumber,
-            'address' => fake()->address,
-            'lat' => fake()->randomDigit(8),
-            'lng' => fake()->randomDigit(8),
             'account_number'=>fake()->randomDigitNotNull,
-            'type_rest'=>rand(0,4),
-            'url_img'=>fake()->url,
-            'time'=>fake()->time,
-            'status'=>rand(0,1)
+            'type_restaurant'=>rand(0,4),
+            'url_img'=>fake()->imageUrl,
+            'work_time'=>fake()->time,
+            'status'=>rand(0,1),
+            'address_id'=>Address::factory()
         ];
     }
 }

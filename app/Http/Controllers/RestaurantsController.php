@@ -33,7 +33,7 @@ class RestaurantsController extends Controller
             'lat'=> request('lat'),
             'lng'=> request('lng'),
             'account_number'=> request('account_number'),
-            'type_rest'=> request('type_rest'),
+            'type_restayrant'=> request('type_restayrant'),
             'url_img'=> request('url_img'),
             'time'=> request('time')
         ]);

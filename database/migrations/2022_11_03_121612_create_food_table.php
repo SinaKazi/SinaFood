@@ -15,12 +15,14 @@ return new class extends Migration
     {
         Schema::create('food', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('title');
             $table->unsignedBigInteger('restaurants_id');
             $table->foreign('restaurants_id')->references('id')->on('restaurants')->onDelete('cascade');
+            $table->unsignedBigInteger('Category_id');
+            $table->foreign('Category_id')->references('id')->on('Categories')->onDelete('cascade');
             $table->integer('price');
-            $table->string('data');
-            $table->string('imag_url');
+            $table->string('raw_material');
+            $table->string('image');
             $table->integer('inventory')->default(0);
             $table->timestamps();
         });

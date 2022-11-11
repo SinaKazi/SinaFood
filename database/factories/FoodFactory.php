@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use App\Models\Restaurants;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -18,13 +19,13 @@ class FoodFactory extends Factory
     public function definition()
     {
         return [
-            'name'=>fake()->colorName,
+            'title'=>fake()->colorName,
             'restaurants_id'=>Restaurants::factory(),
+            'category_id'=>Category::factory(),
             'price'=>rand(1000,500000),
-            'data'=>fake()->text,
-            'imag_url'=>fake()->url,
+            'raw_material'=>fake()->text,
+            'image'=>fake()->imageUrl,
             'inventory'=>rand(0,20)
-
         ];
     }
 }
